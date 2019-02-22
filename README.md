@@ -1,5 +1,8 @@
 # SoalShift_modul1_C06
 
+<br>05111740000030 Kholishotul Amaliah
+<br>05111740000180 Nandha Himawan<br>
+
 1. Anda diminta tolong oleh teman anda untuk mengembalikan filenya yang telah dienkripsi oleh seseorang menggunakan bash script, file yang dimaksud adalah nature.zip. Karena terlalu mudah kalian memberikan syarat akan membuka seluruh file tersebut jika pukul 14:14 pada tanggal 14 Februari atau hari tersebut adalah hari jumat pada bulan Februari.
 <br>Hint: Base64, Hexdump
 
