@@ -13,6 +13,7 @@ do
     do 
      tes=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | head -c 12) 
     done
+  fi
   flag=0
   let n=$n+1
  else
