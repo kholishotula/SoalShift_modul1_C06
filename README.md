@@ -141,10 +141,11 @@ maka kita masukan isi variable tes tadi kedalam file password”n”.txt lalu ki
 > cek=$(cat /home/user/nandha/shift/password$n.txt)
 <br>if [ $tes == $cek ]
 <br>then
-<br> until [ $tes != $cek]
-<br>  do 
-<br>   tes=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | head -c 12)
-<br>  done
+<br>until [ $tes != $cek]
+<br>do 
+<br>tes=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | head -c 12)
+<br>done
+
 pertama kita buat variable bernama cek untuk menyimpan isi password dari file(password(n).txt) yang sedang di cek, lalu jika variable tes(password yang baru kita dapat) ternyata sama dengan cek, maka dilakukan looping hingga tes != cek, isi dari variable tes akan diperbarui. sehingga file password(n+1).txt tidak mungkin memiliki isi yang sama dengan password(n).txt 
 
 4. Lakukan backup file syslog setiap jam dengan format nama file “jam:menit tanggal-bulan-tahun”. Isi dari file backup terenkripsi dengan konversi huruf (_string manipulation_) yang disesuaikan dengan jam dilakukannya backup misalkan sebagai berikut:
