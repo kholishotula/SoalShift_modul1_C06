@@ -105,6 +105,13 @@ Fungsi dari syntax diatas adalah “mengambil” hanya karakter yang di inginkan
 <br>do 
 <br>if [ $(find (direktori)/shift -name password$n.txt | wc -l) -gt 0 ] 
 <br>then
+<br>cek=$(cat /home/user/nandha/shift/password$n.txt)
+<br>if [ $tes == $cek ]
+<br>then
+<br> until [ $tes != $cek]
+<br>  do 
+<br>   tes=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | head -c 12)
+<br>  done
 <br>flag=0 
 <br>let n=$n+1
 <br>else
@@ -129,6 +136,16 @@ Adalah, jika file bernama passwordn.txt sudah ada, maka flag diset tetap 0, lalu
 <br>break
 
 maka kita masukan isi variable tes tadi kedalam file password”n”.txt lalu kita set flag menjadi 1 dan break loop nya.
+
+-lalu untuk syarat ke-4, yaitu password yang dihasilkan tidak boleh sama, maka saya menambahkan sedikit syntax :
+> cek=$(cat /home/user/nandha/shift/password$n.txt)
+<br>if [ $tes == $cek ]
+<br>then
+<br> until [ $tes != $cek]
+<br>  do 
+<br>   tes=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | head -c 12)
+<br>  done
+pertama kita buat variable bernama cek untuk menyimpan isi password dari file(password(n).txt) yang sedang di cek, lalu jika variable tes(password yang baru kita dapat) ternyata sama dengan cek, maka dilakukan looping hingga tes != cek, isi dari variable tes akan diperbarui. sehingga file password(n+1).txt tidak mungkin memiliki isi yang sama dengan password(n).txt 
 
 4. Lakukan backup file syslog setiap jam dengan format nama file “jam:menit tanggal-bulan-tahun”. Isi dari file backup terenkripsi dengan konversi huruf (_string manipulation_) yang disesuaikan dengan jam dilakukannya backup misalkan sebagai berikut:
 
